@@ -718,6 +718,11 @@
     "@types/jsonwebtoken" "8.5.8"
     "jsonwebtoken" "8.5.1"
 
+"@nestjs/passport@^9.0.0":
+  "integrity" "sha512-Gnh8n1wzFPOLSS/94X1sUP4IRAoXTgG4odl7/AO5h+uwscEGXxJFercrZfqdAwkWhqkKWbsntM3j5mRy/6ZQDA=="
+  "resolved" "https://registry.npmjs.org/@nestjs/passport/-/passport-9.0.0.tgz"
+  "version" "9.0.0"
+
 "@nestjs/platform-express@^9.0.0":
   "integrity" "sha512-Up1Ps08n2Y07AYakTKKU5uofGQoAQoUaRyfXdH0G54OnICCUiqcFH0QveNYLCkHoMP4iFs6vMr3xhvO6y91NBQ=="
   "resolved" "https://registry.npmjs.org/@nestjs/platform-express/-/platform-express-9.0.11.tgz"
@@ -3961,7 +3966,7 @@
   "resolved" "https://registry.npmjs.org/passport-strategy/-/passport-strategy-1.0.0.tgz"
   "version" "1.0.0"
 
-"passport@^0.6.0":
+"passport@^0.4.0 || ^0.5.0 || ^0.6.0", "passport@^0.6.0":
   "integrity" "sha512-0fe+p3ZnrWRW74fe8+SvCyf4a3Pb2/h7gFkQ8yTJpAO50gDzlfjZUZTO1k5Eg9kUct22OxHLqDZoKUWRHOh9ug=="
   "resolved" "https://registry.npmjs.org/passport/-/passport-0.6.0.tgz"
   "version" "0.6.0"
