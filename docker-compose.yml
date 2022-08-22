@@ -23,15 +23,12 @@ services:
   test-db:
     image: postgres:13
     restart: always
-    volumes: 
-      - data:/var/lib/postgresql/test-data
     ports:
       - 5435:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: nest
-      PGDATA : /var/lib/postgresql/test-data/pgdata
     networks:
       - poznanie-network
 volumes:
