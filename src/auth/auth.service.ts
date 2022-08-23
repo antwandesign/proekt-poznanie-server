@@ -8,6 +8,7 @@ import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
+  //Inject dependencies
   constructor(
     private prismaService: PrismaService,
     private config: ConfigService,
@@ -26,6 +27,7 @@ export class AuthService {
         },
       });
 
+      //Dirty hack to clean hash from response
       delete user.password;
       //RETURN USER
       return user;
@@ -47,7 +49,7 @@ export class AuthService {
   }
 
   async signin(dto: AuthDto) {
-    //Find User
+    //Find user in database
     const user = await this.prismaService.user.findUnique({
       where: {
         email: dto.email,
@@ -63,7 +65,7 @@ export class AuthService {
     //Error out if password is incorrect
     if (!valid) throw new ForbiddenException('Invalid password');
 
-    //Return JWT
+    //Return JWT and user object
     return {
       jwt: await this.signToken(user.id, user.email),
       user: {
@@ -75,13 +77,14 @@ export class AuthService {
 
   //Sign token function
   signToken(userId: number, email: string): Promise<string> {
+    //Create payload
     const payload = { id: userId, email };
-
+    //Sign Token
     const token = this.jwt.signAsync(payload, {
       expiresIn: '1d',
       secret: this.config.get('JWT_SECRET'),
     });
-
+    //Return token
     return token;
   }
 }
