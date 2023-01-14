@@ -6,6 +6,8 @@ import { UserModule } from './user/user.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { EventModule } from './event/event.module';
 
+import { SignupsModule } from './signups/signups.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -15,6 +17,7 @@ import { EventModule } from './event/event.module';
     UserModule,
     PrismaModule,
     EventModule,
+    SignupsModule,
   ],
 })
 export class AppModule {}

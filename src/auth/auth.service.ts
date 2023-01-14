@@ -29,6 +29,7 @@ export class AuthService {
 
       //Dirty hack to clean hash from response
       delete user.password;
+
       //RETURN USER
       return user;
 
